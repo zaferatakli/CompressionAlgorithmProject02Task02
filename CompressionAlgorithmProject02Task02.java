@@ -6,22 +6,22 @@ public class CompressionAlgorithmProject02Task02 {
     public static void main(String[] args) {
         /* Compression Algorithm Project */
         Scanner input = new Scanner(System.in);
-        System.out.print("Lutfen sıkıstırılacak metnı bosluk kullanmadan giriniz:");
-        String metin = input.nextLine().trim().replace(" ", "") + " ";
+        System.out.print("Please enter a sentence: ");
+        String sentence = input.nextLine().trim().replace(" ", "") + " ";
 
-        String zipMetin = "";
-        int sayac = 1;
-        for (int i = 1; i < metin.length(); i++) {
-            if (metin.charAt(i) == metin.charAt(i - 1)) {
-                sayac++;
+        String zipSentence = "";
+        int count = 1;
+        for (int i = 1; i < sentence.length(); i++) {
+            if (sentence.charAt(i) == sentence.charAt(i - 1)) {
+                count++;
             } else {
-                zipMetin = zipMetin + sayac + metin.charAt(i - 1);
-                sayac = 1;
+                zipSentence = zipSentence + count + sentence.charAt(i - 1);
+                count = 1;
             }
         }
 
-        System.out.println("Girilen metin: " + metin);
-        System.out.println("Sıkıstırılmıs metın: " + zipMetin);
+        System.out.println("Entry sentence: " + sentence);
+        System.out.println("Zip sentence: " + zipSentence);
 
         input.close();
     }
